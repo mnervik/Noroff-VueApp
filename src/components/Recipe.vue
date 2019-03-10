@@ -1,11 +1,11 @@
 <template>
     <div class="col">
         <div class="card" style="text-align: center">
-            <img class="card-img-top" :src="image">
+            <img class="card-img-top" :src="recipes.image">
             <div class="card-body">
-                <h5 class="card-title">{{title}}</h5>
-                <p>LINK: <a :href="link">{{link}}</a></p>
-                <p>{{ingredients}}</p>
+                <h5 class="card-title">{{recipes.title}}</h5>
+                <p>LINK: <a :href="recipes.link">{{recipes.link}}</a></p>
+                <p>{{recipes.ingredients}}</p>
             </div>
         </div>
     </div>
@@ -13,6 +13,6 @@
 
 <script>
     export default {
-        props: ['image', 'link', 'title', 'ingredients']
+        props: ['recipes']
     }
 </script>

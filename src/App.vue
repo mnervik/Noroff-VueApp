@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <Recipe :image="recipeImg" :title="recipeTitle" :link="recipeLink" :ingredients="recipeIngredients"/>
+        <Recipe :recipes="recipes"/>
     </div>
 </template>
 
@@ -15,10 +15,12 @@
         },
         data() {
             return {
-                recipeImg: '',
-                recipeTitle: '',
-                recipeLink: '',
-                recipeIngredients: ''
+                recipes: {
+                    image: '',
+                    title: '',
+                    link: '',
+                    ingredients: ''
+                }
             }
         },
         created: function () {
@@ -32,11 +34,10 @@
                     .then(function (result) {
                         let recipe = result.data.results[0];
 
-                        /* Set Data */
-                        self.recipeImg = recipe.thumbnail;
-                        self.recipeTitle = recipe.title;
-                        self.recipeLink = recipe.href;
-                        self.recipeIngredients = recipe.ingredients;
+                        self.recipes.image = recipe.thumbnail;
+                        self.recipes.title = recipe.title;
+                        self.recipes.link = recipe.href;
+                        self.recipes.ingredients = recipe.ingredients;
                     });
             }
         }
