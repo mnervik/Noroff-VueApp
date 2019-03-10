@@ -1,9 +1,11 @@
-### Setup project and install requirements
+# Instructions
+
+## Setup project and install requirements
 ```
 npm install
 ```
 
-### Compile for development
+## Compile for development
 ```
 npm run serve
 ```
